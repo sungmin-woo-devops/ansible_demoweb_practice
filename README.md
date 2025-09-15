@@ -42,12 +42,12 @@ fwrule_https: https
 
 ## Quick Start
 1) 인벤토리
-    ```
+    ```ini
     [web]
     your-centos-host ansible_host=1.2.3.4
     ```
 2) 플레이북
-    ```
+    ```yaml
     - name: Setup demo web
       hosts: web
       become: true
@@ -79,7 +79,7 @@ fwrule_https: https
   ```
 
 - 플랫폼 검사 보완: `ansible_facts['os_family']` 기반으로 RedHat 계열을 허용하도록 일반화하면 호환성이 좋아집니다.
-  ```bash
+  ```yaml
   - name: Fail if not RedHat Family
     ansible.builtin.fail:
       msg: "RedHat family only."
